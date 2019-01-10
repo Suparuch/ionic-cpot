@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { ActionSheetController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +7,33 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public actionSheetCtrl: ActionSheetController) { }
 
+  openMenu() {
+    const actionSheet = this.actionSheetCtrl.create({
+      title: 'Modify',
+      buttons: [
+        {
+          text: 'Destructive',
+          role: 'destructive',
+          handler: () => {
+            console.log('Destructive clicked');
+          }
+        },{
+          text: 'Archive',
+          handler: () => {
+            console.log('Archive clicked');
+          }
+        },{
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('xxx');
+          }
+        }
+      ]
+    });
+    actionSheet.present();
   }
 
 }
