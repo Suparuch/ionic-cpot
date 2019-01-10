@@ -1,3 +1,10 @@
-page-home {
+.title {
+  font-size: 2em;
+  color: #f00;
+  width: 100%;
+  text-align: center;
+}
 
+page-home {
+  background-image: linear-gradient(to bottom right, pink, yellow);
 }
